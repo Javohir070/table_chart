@@ -61,12 +61,42 @@ table {
       height: 10px;
       background-color:rgb(14, 14, 14) ;
   }
+  .color-bg .aqua{
+    width: 40px;
+    height: 10px;
+    background-color: #00FFFF;
+}
+.color-bg .brown{
+    width: 40px;
+    height: 10px;
+    background-color:#A52A2A ;
+}
+.color-bg .beepPink{
+  width: 40px;
+  height: 10px;
+  background-color:#FF1493 ;
+}
+.color-bg .gold{
+  width: 40px;
+  height: 10px;
+  background-color:#FFD700;
+}
+.color-bg .indigo{
+  width: 40px;
+  height: 10px;
+  background-color:#4B0082 ;
+}
+.color-bg .lawnGreen{
+  width: 40px;
+  height: 10px;
+  background-color: #7CFC00;
+}
   .chart-item{
     text-align: center;
     display: flex;
     justify-content: center;
   }
   .chart-items{
-    width: 700px;
+    width: 500px;
     padding-top: 40px;
   }

@@ -8,6 +8,15 @@ import {
   ModalFooter,
   Input,
 } from "reactstrap";
+import { PolarArea } from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    RadialLinearScale,
+    ArcElement,
+    Tooltip,
+    Legend,
+  } from 'chart.js';
+  ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 function Table() {
   const [modal, setModal] = useState(false);
   const [inputNumber, setInputNumber] = useState('');
@@ -19,64 +28,109 @@ function Table() {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
       tdTitle_1: 1,
-      tdTitle_2: 0,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
       tdColor: "red",
     },
     {
       tdName:
         "Собирать схемы технологических устройств и проверять их работоспособность",
       tdTitle_1: 2,
-      tdTitle_2: 0,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
       tdColor: "green",
     },
     {
       tdName:
-        "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
+        "Знать основные законы и правовые устои в отрасли энергетики ",
       tdTitle_1: 3,
-      tdTitle_2: 3,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
       tdColor: "yellow",
     },
     {
       tdName:
-        "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
+        "Знать метрологические аспекты в области Энергетики",
       tdTitle_1: 4,
-      tdTitle_2: 3,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
       tdColor: "grey",
     },
     {
       tdName:
-        "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
+        "Уметь прогнозировать отказывается обнаруживать дефекты  электрооборудования",
       tdTitle_1: 5,
-      tdTitle_2: 3,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
       tdColor: "blue",
     },
     {
       tdName:
-        "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
+        "Oлнять расчёт по пределению еобходимого стропитпющего борудования",
+      tdTitle_1: 2,
+      tdColor: "aqua",
+    },
+    {
+      tdName:
+        "Управлять программным обеспечением в комплексе энергоснабжения",
+      tdTitle_1: 4,
+      tdColor: "black",
+    },
+    {
+      tdName:
+        "Уметь обнаружить устранить неисправности в электропитающих установках",
+      tdTitle_1: 3,
+      tdColor: "black",
+    },
+    {
+      tdName:
+        "Выбирать тип и проверять работоспособность трансформаторов",
       tdTitle_1: 5,
-      tdTitle_2: 3,
-      tdTitle_3: 0,
-      tdTitle_4: 6,
-      tdTitle_5: 8,
+      tdColor: "black",
+    },
+    {
+      tdName:
+        "Знание комплекса энергетических объектов",
+      tdTitle_1: 1,
+      tdColor: "black",
+    },
+    {
+      tdName:
+        "Уметь действовать аварийных Ситуациях",
+      tdTitle_1: 2,
+      tdColor: "black",
+    },
+    {
+      tdName:
+        "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye",
+      tdTitle_1: 5,
       tdColor: "black",
     },
   ]);
-
+      let user = baza;
+      const data = {
+          labels: [
+            'Red',
+            'Green',
+            'Yellow',
+            'Grey',
+            'Blue',
+            'Black',
+            'Aqua',
+            'Brown',
+            'DeepPink',
+            'Gold',
+            'Indigo',
+            'LawnGreen'
+          ],
+          datasets: [{
+            label: 'My First Dataset',
+            data: user,
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(75, 192, 192)',
+              'rgb(255, 205, 86)',
+              'rgb(201, 203, 207)',
+              'rgb(54, 162, 235)',
+              'rgb(14, 14, 14)',
+              '#00FFFF',
+              '#A52A2A',
+              '#FF1493',
+              '#FFD700',
+              '#4B0082',
+              '#7CFC00',
+            ]
+          }]};
   const toggle = () => setModal(!modal);
   const toggleTD = (index, setNumber)=> {
     setDataIndex(index)
@@ -176,6 +230,13 @@ function Table() {
 
           </tbody>
         </table>
+        <div className='chart-item' >
+            <div className='chart-items'>
+                <PolarArea 
+                data = {data}>
+                </PolarArea>
+            </div>
+        </div>
       </div>
     </>
   );
