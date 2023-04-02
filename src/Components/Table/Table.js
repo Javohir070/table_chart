@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import {
   Button,
@@ -13,12 +13,13 @@ function Table() {
   const [inputNumber, setInputNumber] = useState('');
   const [dataIndex, setDataIndex] = useState();
   const [toggleTd, setToggleTd] = useState("")
+  const [baza, setBaza] = useState([])
   const [tableData, setDataTable] = useState([
     {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 5,
-      tdTitle_2: 3,
+      tdTitle_1: 1,
+      tdTitle_2: 0,
       tdTitle_3: 0,
       tdTitle_4: 6,
       tdTitle_5: 8,
@@ -27,8 +28,8 @@ function Table() {
     {
       tdName:
         "Собирать схемы технологических устройств и проверять их работоспособность",
-      tdTitle_1: 0,
-      tdTitle_2: 3,
+      tdTitle_1: 2,
+      tdTitle_2: 0,
       tdTitle_3: 0,
       tdTitle_4: 6,
       tdTitle_5: 8,
@@ -37,7 +38,7 @@ function Table() {
     {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 0,
+      tdTitle_1: 3,
       tdTitle_2: 3,
       tdTitle_3: 0,
       tdTitle_4: 6,
@@ -47,7 +48,7 @@ function Table() {
     {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 0,
+      tdTitle_1: 4,
       tdTitle_2: 3,
       tdTitle_3: 0,
       tdTitle_4: 6,
@@ -57,7 +58,7 @@ function Table() {
     {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 0,
+      tdTitle_1: 5,
       tdTitle_2: 3,
       tdTitle_3: 0,
       tdTitle_4: 6,
@@ -67,7 +68,7 @@ function Table() {
     {
       tdName:
         "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 0,
+      tdTitle_1: 5,
       tdTitle_2: 3,
       tdTitle_3: 0,
       tdTitle_4: 6,
@@ -92,7 +93,22 @@ function Table() {
     let newArr = [...tableData]; 
     newArr[dataIndex][toggleTd] = inputNumber;
     setDataTable(newArr);
+    
   }
+  const savefFunction  = () => {
+    let obj = [];
+    const bazas = tableData.map((item) => (
+     obj.push(item.tdTitle_1)
+    ) );
+    setBaza(obj);
+    console.log(obj);
+  }
+  useEffect(() => {
+    savefFunction();
+  }, [tableData]);
+  
+  console.log('salom');
+  console.log(baza);
   return (
     <>
       <Modal isOpen={modal} toggle={toggle}>
@@ -127,17 +143,30 @@ function Table() {
           </thead>
           <tbody>
             {tableData.map((item, index) => {
+              
               return (
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{item.tdName}</td>
                   <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {item.tdTitle_1}
+                    {(item.tdTitle_1 == 1)?(item.tdTitle_1):('0')}
                   </td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_2")}>{item.tdTitle_2}</td>
+                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                    {(item.tdTitle_1 == 2)?(item.tdTitle_1):('0')}
+                  </td>
+                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                    {(item.tdTitle_1 == 3)?(item.tdTitle_1):('0')}
+                  </td>
+                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                    {(item.tdTitle_1 == 4)?(item.tdTitle_1):('0')}
+                  </td>
+                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                    {(item.tdTitle_1 == 5)?(item.tdTitle_1):('0')}
+                  </td>
+                  {/* <td className="table-head" onClick={() => toggleTD(index, "tdTitle_2")}>{item.tdTitle_2}</td>
                   <td className="table-head" onClick={() => toggleTD(index, "tdTitle_3")}>{item.tdTitle_3}</td>
                   <td className="table-head" onClick={() => toggleTD(index, "tdTitle_4")}>{item.tdTitle_4}</td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_5")}>{item.tdTitle_5}</td>
+                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_5")}>{item.tdTitle_5}</td> */}
                   <td className="color-bg">
                     <div className={item.tdColor}></div>
                   </td>
