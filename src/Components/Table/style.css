@@ -1,9 +1,14 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse !important;
-    width: 60%;
+    width: 70%;
     border: 1px solid #dddddd;
     overflow-x:auto !important;
+  }
+  .container-item{
+    width: 90% !important;
+    padding: 10px auto;
+    margin: auto;
   }
   .table-item table,   th, td{
     border: 1px solid #dddddd !important;
@@ -37,7 +42,18 @@ table {
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      width: 100%;
 
+  }
+  .table-title {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    background-color: #0a0b0b;
+    margin: 0px;
   }
   .color-bg .red{
       width: 40px;
@@ -107,4 +123,42 @@ table {
   .chart-items{
     width: 500px;
     padding-top: 40px;
+  }
+  @media  (max-width: 800px) {
+    .chart-items{
+      width: 400px;
+    }
+    table{
+      width: 90%;
+    }
+    .container-item{
+      width: 100% !important;
+    }
+    .table-title{
+      font-size: 24px;
+    }
+  }
+  @media  (max-width: 1400px) {
+    .chart-items{
+      width: 400px;
+    }
+    table{
+      width: 60%;
+    }
+  }
+  @media  (max-width: 1600px) {
+    .chart-items{
+      width: 400px;
+    }
+    table{
+      width: 60%;
+    }
+  }
+  @media  (max-width: 1200px) {
+    .chart-items{
+      width: 500px;
+    }
+    table{
+      width: 90%;
+    }
   }

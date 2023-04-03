@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
+// import rasm1  from "../../assets/img/r1";
+// import rasm2  from "../../assets/img/r2";
+// import rasm3  from "../../assets/img/r3";
 import {
   Button,
   Modal,
@@ -114,7 +117,7 @@ function Table() {
             'LawnGreen'
           ],
           datasets: [{
-            label: 'My First Dataset',
+            label: 'Критерии oценки',
             data: user,
             backgroundColor: [
               'rgb(255, 99, 132)',
@@ -181,53 +184,59 @@ function Table() {
           </Button>{" "}
         </ModalFooter>
       </Modal>
-      <div className="table-item">
-        <table >
-            <tr>
-                <th>#</th>
-                <th>Название</th>
-                <th className="table-head">1</th>
-                <th className="table-head">2</th>
-                <th className="table-head">3</th>
-                <th className="table-head">4</th>
-                <th className="table-head">5</th>
-                <th>color</th>
-            </tr>
-            {tableData.map((item, index) => {
-              
-              return (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{item.tdName}</td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {(item.tdTitle_1 == 1)?(item.tdTitle_1):('0')}
-                  </td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {(item.tdTitle_1 == 2)?(item.tdTitle_1):('0')}
-                  </td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {(item.tdTitle_1 == 3)?(item.tdTitle_1):('0')}
-                  </td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {(item.tdTitle_1 == 4)?(item.tdTitle_1):('0')}
-                  </td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
-                    {(item.tdTitle_1 == 5)?(item.tdTitle_1):('0')}
-                  </td>
-                  <td className="color-bg">
-                    <div className={item.tdColor}></div>
-                  </td>
-                </tr>
-              );
-            })}
+      <div className="container-item">
+        <div className="table-title">Энергосберегающие сети Smart Grid</div>
+        <div className="table-item">
+          <table >
+              <tr>
+                  <th>#</th>
+                  <th>Название</th>
+                  <th className="table-head">1</th>
+                  <th className="table-head">2</th>
+                  <th className="table-head">3</th>
+                  <th className="table-head">4</th>
+                  <th className="table-head">5</th>
+                  <th>color</th>
+              </tr>
+              {tableData.map((item, index) => {
+                
+                return (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{item.tdName}</td>
+                    <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                      {(item.tdTitle_1 == 1)?(item.tdTitle_1):('0')}
+                    </td>
+                    <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                      {(item.tdTitle_1 == 2)?(item.tdTitle_1):('0')}
+                    </td>
+                    <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                      {(item.tdTitle_1 == 3)?(item.tdTitle_1):('0')}
+                    </td>
+                    <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                      {(item.tdTitle_1 == 4)?(item.tdTitle_1):('0')}
+                    </td>
+                    <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
+                      {(item.tdTitle_1 == 5)?(item.tdTitle_1):('0')}
+                    </td>
+                    <td className="color-bg">
+                      <div className={item.tdColor}></div>
+                    </td>
+                  </tr>
+                );
+              })}
 
-        </table>
-        <div className='chart-item' >
-            <div className='chart-items'>
-                <PolarArea 
-                data = {data}>
-                </PolarArea>
-            </div>
+          </table>
+          <div className='chart-item' >
+              <div className='chart-items'>
+                  <PolarArea 
+                  data = {data}>
+                  </PolarArea>
+              </div>
+          </div>
+        </div>
+        <div className="rasm-item row">
+
         </div>
       </div>
     </>
