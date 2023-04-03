@@ -1,10 +1,15 @@
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-collapse: collapse !important;
     width: 60%;
+    border: 1px solid #dddddd;
+    overflow-x:auto !important;
   }
-  
-  td, th {
+  .table-item table,   th, td{
+    border: 1px solid #dddddd !important;
+
+  }
+   td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -27,8 +32,11 @@ table {
       text-align: center;
   }
   .table-item{
+      margin-top: 20px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
 
   }
   .color-bg .red{
@@ -71,7 +79,7 @@ table {
     height: 10px;
     background-color:#A52A2A ;
 }
-.color-bg .beepPink{
+.color-bg .deepPink{
   width: 40px;
   height: 10px;
   background-color:#FF1493 ;

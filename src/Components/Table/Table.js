@@ -58,43 +58,43 @@ function Table() {
       tdName:
         "Oлнять расчёт по пределению еобходимого стропитпющего борудования",
       tdTitle_1: 2,
-      tdColor: "aqua",
+      tdColor: "black",
     },
     {
       tdName:
         "Управлять программным обеспечением в комплексе энергоснабжения",
       tdTitle_1: 4,
-      tdColor: "black",
+      tdColor: "aqua",
     },
     {
       tdName:
         "Уметь обнаружить устранить неисправности в электропитающих установках",
       tdTitle_1: 3,
-      tdColor: "black",
+      tdColor: "brown",
     },
     {
       tdName:
         "Выбирать тип и проверять работоспособность трансформаторов",
       tdTitle_1: 5,
-      tdColor: "black",
+      tdColor: "deepPink",
     },
     {
       tdName:
         "Знание комплекса энергетических объектов",
       tdTitle_1: 1,
-      tdColor: "black",
+      tdColor: "gold",
     },
     {
       tdName:
         "Уметь действовать аварийных Ситуациях",
       tdTitle_1: 2,
-      tdColor: "black",
+      tdColor: "indigo",
     },
     {
       tdName:
         "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye",
       tdTitle_1: 5,
-      tdColor: "black",
+      tdColor: "lawnGreen",
     },
   ]);
       let user = baza;
@@ -182,20 +182,17 @@ function Table() {
         </ModalFooter>
       </Modal>
       <div className="table-item">
-        <table>
-          <thead>
+        <table >
             <tr>
-              <th>#</th>
-              <th>Название</th>
-              <th className="table-head">1</th>
-              <th className="table-head">2</th>
-              <th className="table-head">3</th>
-              <th className="table-head">4</th>
-              <th className="table-head">5</th>
-              <th>color</th>
+                <th>#</th>
+                <th>Название</th>
+                <th className="table-head">1</th>
+                <th className="table-head">2</th>
+                <th className="table-head">3</th>
+                <th className="table-head">4</th>
+                <th className="table-head">5</th>
+                <th>color</th>
             </tr>
-          </thead>
-          <tbody>
             {tableData.map((item, index) => {
               
               return (
@@ -217,10 +214,6 @@ function Table() {
                   <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
                     {(item.tdTitle_1 == 5)?(item.tdTitle_1):('0')}
                   </td>
-                  {/* <td className="table-head" onClick={() => toggleTD(index, "tdTitle_2")}>{item.tdTitle_2}</td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_3")}>{item.tdTitle_3}</td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_4")}>{item.tdTitle_4}</td>
-                  <td className="table-head" onClick={() => toggleTD(index, "tdTitle_5")}>{item.tdTitle_5}</td> */}
                   <td className="color-bg">
                     <div className={item.tdColor}></div>
                   </td>
@@ -228,7 +221,6 @@ function Table() {
               );
             })}
 
-          </tbody>
         </table>
         <div className='chart-item' >
             <div className='chart-items'>
