@@ -4,6 +4,7 @@ table {
     width: 70%;
     border: 1px solid #dddddd;
     overflow-x:auto !important;
+    background-color: #fff;
   }
   .container-item{
     width: 90% !important;
@@ -52,7 +53,7 @@ table {
     font-size: 28px;
     font-weight: 600;
     color: white;
-    background-color: #0a0b0b;
+    /* background-color: #0a0b0b; */
     margin: 0px;
   }
   .color-bg .red{
@@ -115,6 +116,24 @@ table {
   height: 10px;
   background-color: #7CFC00;
 }
+.color-bg .blueViolet{
+  width: 40px;
+  height: 10px;
+  background-color: #8A2BE2;
+}
+.color-bg .peru{
+  width: 40px;
+  height: 10px;
+  background-color: #CD853F;
+}
+.color-bg .darkGreen{
+  width: 40px;
+  height: 10px;
+  background-color: #006400;
+}
+.table-user{
+  font-size: 18px;
+}
   .chart-item{
     text-align: center;
     display: flex;
@@ -123,10 +142,20 @@ table {
   .chart-items{
     width: 500px;
     padding-top: 40px;
+    background-color: #fff;
+    margin-left: 50px;
+  }
+  @media (max-width: 1250px){
+    table{
+      margin-bottom: 20px;
+    }
+    .chart-items{
+      margin-left: 0px;
+    }
   }
   @media  (max-width: 800px) {
     .chart-items{
-      width: 400px;
+      width: 500px;
     }
     table{
       width: 90%;
@@ -154,11 +183,38 @@ table {
       width: 60%;
     }
   }
+  @media  (max-width: 1700px) {
+    .chart-items{
+      width: 400px;
+    }
+    table{
+      width: 60%;
+    }
+  }
+  @media  (min-width: 1800px) {
+    .chart-items{
+      width: 400px;
+    }
+    table{
+      width: 60%;
+    }
+  }
   @media  (max-width: 1200px) {
     .chart-items{
       width: 500px;
     }
     table{
       width: 90%;
+    }
+  }
+
+  @media (max-width:520px){
+    .chart-items{
+      width: 400px;
+    }
+  }
+  @media (max-width:420px){
+    .chart-items{
+      width: 300px;
     }
   }

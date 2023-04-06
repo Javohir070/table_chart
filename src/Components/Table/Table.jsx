@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-// import rasm1  from "../../assets/img/r1";
-// import rasm2  from "../../assets/img/r2";
-// import rasm3  from "../../assets/img/r3";
 import {
   Button,
   Modal,
@@ -11,6 +8,8 @@ import {
   ModalFooter,
   Input,
 } from "reactstrap";
+import { generalData } from "../../baza/baza";
+// import { userData } from "../../baza/baza";
 import { PolarArea } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -22,84 +21,14 @@ import {
   ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 function Table() {
   const [modal, setModal] = useState(false);
+  const [modal1, setModal1] = useState(false);
   const [inputNumber, setInputNumber] = useState('');
+  const [inputNumber1, setInputNumber1] = useState('');
   const [dataIndex, setDataIndex] = useState();
   const [toggleTd, setToggleTd] = useState("")
   const [baza, setBaza] = useState([])
-  const [tableData, setDataTable] = useState([
-    {
-      tdName:
-        "Подбирать технологическое оборудование для ремонта и эксплуатации электрооборудования",
-      tdTitle_1: 1,
-      tdColor: "red",
-    },
-    {
-      tdName:
-        "Собирать схемы технологических устройств и проверять их работоспособность",
-      tdTitle_1: 2,
-      tdColor: "green",
-    },
-    {
-      tdName:
-        "Знать основные законы и правовые устои в отрасли энергетики ",
-      tdTitle_1: 3,
-      tdColor: "yellow",
-    },
-    {
-      tdName:
-        "Знать метрологические аспекты в области Энергетики",
-      tdTitle_1: 4,
-      tdColor: "grey",
-    },
-    {
-      tdName:
-        "Уметь прогнозировать отказывается обнаруживать дефекты  электрооборудования",
-      tdTitle_1: 5,
-      tdColor: "blue",
-    },
-    {
-      tdName:
-        "Oлнять расчёт по пределению еобходимого стропитпющего борудования",
-      tdTitle_1: 2,
-      tdColor: "black",
-    },
-    {
-      tdName:
-        "Управлять программным обеспечением в комплексе энергоснабжения",
-      tdTitle_1: 4,
-      tdColor: "aqua",
-    },
-    {
-      tdName:
-        "Уметь обнаружить устранить неисправности в электропитающих установках",
-      tdTitle_1: 3,
-      tdColor: "brown",
-    },
-    {
-      tdName:
-        "Выбирать тип и проверять работоспособность трансформаторов",
-      tdTitle_1: 5,
-      tdColor: "deepPink",
-    },
-    {
-      tdName:
-        "Знание комплекса энергетических объектов",
-      tdTitle_1: 1,
-      tdColor: "gold",
-    },
-    {
-      tdName:
-        "Уметь действовать аварийных Ситуациях",
-      tdTitle_1: 2,
-      tdColor: "indigo",
-    },
-    {
-      tdName:
-        "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye",
-      tdTitle_1: 5,
-      tdColor: "lawnGreen",
-    },
-  ]);
+  const [nameUser, setNameUser] = useState({name:'Qayumov Javohir 411-20-guruh'});
+  const [tableData, setDataTable] = useState(generalData);
       let user = baza;
       const data = {
           labels: [
@@ -114,7 +43,10 @@ function Table() {
             'DeepPink',
             'Gold',
             'Indigo',
-            'LawnGreen'
+            'LawnGreen',
+            'BlueViolet',
+            'Peru',
+            'DarkGreen'
           ],
           datasets: [{
             label: 'Критерии oценки',
@@ -132,17 +64,29 @@ function Table() {
               '#FFD700',
               '#4B0082',
               '#7CFC00',
+              '#8A2BE2',
+              '#CD853F',
+              '#006400'
             ]
           }]};
   const toggle = () => setModal(!modal);
+  const toggle1 = () => setModal1(!modal1);
+
   const toggleTD = (index, setNumber)=> {
     setDataIndex(index)
     setToggleTd(setNumber)
     setModal(!modal)
   }
-
+  const toggleUsers = () =>{
+    setModal1(!modal1);
+  }
   const getNumber = (event) => {
     setInputNumber(event.target.value);
+    // setNameUser({name: event.target.value});
+  }
+  const getNumber1 = (event) => {
+    setInputNumber1(event.target.value);
+    // setNameUser({name: event.target.value});
   }
 
   const saveFunction = () =>{
@@ -150,22 +94,22 @@ function Table() {
     let newArr = [...tableData]; 
     newArr[dataIndex][toggleTd] = inputNumber;
     setDataTable(newArr);
-    
+  }
+  const saveFunction1 = () =>{
+    setModal1(!modal1)
+    setNameUser({name: inputNumber1});
   }
   const savefFunction  = () => {
     let obj = [];
-    const bazas = tableData.map((item) => (
+     tableData.map((item) => (
      obj.push(item.tdTitle_1)
     ) );
     setBaza(obj);
-    console.log(obj);
   }
   useEffect(() => {
     savefFunction();
   }, [tableData]);
   
-  console.log('salom');
-  console.log(baza);
   return (
     <>
       <Modal isOpen={modal} toggle={toggle}>
@@ -184,8 +128,29 @@ function Table() {
           </Button>{" "}
         </ModalFooter>
       </Modal>
+
+      <Modal isOpen={modal1} toggle={toggle1}>
+        <ModalHeader toggle={toggle1}>Table Number</ModalHeader>
+        <ModalBody>
+          <div>
+            <Input onChange={getNumber1}/>
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="secondary" onClick={toggle1}>
+            Bekor Qilish
+          </Button>
+          <Button color="primary" onClick={saveFunction1}>
+            Saqlash
+          </Button>{" "}
+        </ModalFooter>
+      </Modal>
       <div className="container-item">
-        <div className="table-title">Энергосберегающие сети Smart Grid</div>
+  
+          <>
+            <div  className="table-title">Энергосберегающие сети Smart Grid </div>
+            <div className="table-user table-title" onClick={toggleUsers} >{nameUser.name}</div>
+          </>
         <div className="table-item">
           <table >
               <tr>
@@ -203,7 +168,7 @@ function Table() {
                 return (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{item.tdName}</td>
+                    <td onClick={() => toggleTD(index, "tdName")}>{item.tdName}</td>
                     <td className="table-head" onClick={() => toggleTD(index, "tdTitle_1")}>
                       {(item.tdTitle_1 == 1)?(item.tdTitle_1):('0')}
                     </td>
