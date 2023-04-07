@@ -30,14 +30,14 @@ export const generalData = [
     {
       id:5,
       tdName:
-        "Уметь прогнозировать отказывается обнаруживать дефекты  электрооборудования",
+        "Уметь прогнозировать отказы и обнаруживать дефекты электрооборудования",
       tdTitle_1: 5,
       tdColor: "blue",
     },
     {
       id:6,
       tdName:
-        "Oлнять расчёт по пределению еобходимого стропитпющего борудования",
+        "Выполнять расчёт по определению необходимого электропитающего оборудования",
       tdTitle_1: 2,
       tdColor: "black",
     },
@@ -51,7 +51,7 @@ export const generalData = [
     {
       id:8,
       tdName:
-        "Уметь обнаружить устранить неисправности в электропитающих установках",
+        "Уметь обнаружить и устранить неисправности в электропитающих установках",
       tdTitle_1: 3,
       tdColor: "brown",
     },
@@ -72,41 +72,44 @@ export const generalData = [
     {
       id:11,
       tdName:
-        "Уметь действовать аварийных Ситуациях",
+        "Уметь действовать в аварийных ситуациях",
       tdTitle_1: 2,
       tdColor: "indigo",
     },
     {
       id:12,
       tdName:
-        "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye",
+        "Уметь читать и составлять структурные схемы систем энергоснабжения ",
       tdTitle_1: 5,
       tdColor: "lawnGreen",
     },
     {
       id:13,
       tdName:
-        "Знание комплекса энергетических объектов13",
+        "Знание комплекса энергетических объектов",
       tdTitle_1: 1,
       tdColor: "blueViolet",
     },
     {
       id:14,
       tdName:
-        "Уметь действовать аварийных Ситуациях14",
+        "Уметь действовать в аварийных ситуациях ",
       tdTitle_1: 5,
       tdColor: "peru",
     },
     {
       id:15,
       tdName:
-        "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye15",
+        "Уметь читать и составлять структурные схемы систем энергоснабжения ",
       tdTitle_1: 3,
       tdColor: "darkGreen",
     },
   ];
-export const userData =[
-    {id:1,title:"Energosberegaushchie seti Smart Grid", name:'Qayumov Javohir 411-20-guruh'},
-    {id:1,title:"Energosberegaushchie seti Smart Grid", name:'Qayumov Javohir 411-20-guruh'},
-    {id:1,title:"Energosberegaushchie seti Smart Grid", name:'Qayumov Javohir 411-20-guruh'}
-  ];
+
+  
+ 
+  
+  	
+
+  		
+ 

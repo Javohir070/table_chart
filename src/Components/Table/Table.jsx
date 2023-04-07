@@ -27,7 +27,7 @@ function Table() {
   const [dataIndex, setDataIndex] = useState();
   const [toggleTd, setToggleTd] = useState("")
   const [baza, setBaza] = useState([])
-  const [nameUser, setNameUser] = useState({name:'Qayumov Javohir 411-20-guruh'});
+  const [nameUser, setNameUser] = useState({name:'Rashidov Ali 412-20-guruh'});
   const [tableData, setDataTable] = useState(generalData);
       let user = baza;
       const data = {
