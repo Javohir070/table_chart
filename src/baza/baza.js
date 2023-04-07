@@ -94,14 +94,14 @@ export const generalData = [
       id:14,
       tdName:
         "Уметь действовать аварийных Ситуациях14",
-      tdTitle_1: 2,
+      tdTitle_1: 5,
       tdColor: "peru",
     },
     {
       id:15,
       tdName:
         "Уметь читать и  составлять структурные схемы систем энергоснабжения Qoye15",
-      tdTitle_1: 5,
+      tdTitle_1: 3,
       tdColor: "darkGreen",
     },
   ];
